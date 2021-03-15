@@ -46,13 +46,13 @@ RecommItems.prototype.registerEvent = function () {
   this.init("popularWords", "인기 쇼핑 키워드");
 };
 
-RecommItems.prototype.registerEvent = async function () {
-  await this.init("popularWords", "인기 쇼핑 키워드");
-  this.searchingInput.addEventListener("focusin", this.focusinEvent.bind(this));
-  this.searchingInput.addEventListener("focusout", this.focusoutEvent.bind(this));
-  this.searchingInput.addEventListener("input", this.inputEvent.bind(this));
-  this.searchingInput.addEventListener("keydown", this.keydownEvent.bind(this));
-};
+// RecommItems.prototype.registerEvent = async function () {
+//   await this.init("popularWords", "인기 쇼핑 키워드");
+//   this.searchingInput.addEventListener("focusin", this.focusinEvent.bind(this));
+//   this.searchingInput.addEventListener("focusout", this.focusoutEvent.bind(this));
+//   this.searchingInput.addEventListener("input", this.inputEvent.bind(this));
+//   this.searchingInput.addEventListener("keydown", this.keydownEvent.bind(this));
+// };
 
 RecommItems.prototype.keydownEvent = function (e) {
   const { key, target } = e;
@@ -117,7 +117,6 @@ RecommItems.prototype.colorOff = function () {
 };
 
 RecommItems.prototype.focusinEvent = function () {
-  console.log(this);
   this.recommWordsToggle.innerHTML = this.recentKeywordsTemplate ? this.recentKeywordsTemplate : this.topTenWords;
   this.rollingKeywordHtml.classList.add("none");
   this.recommWordsToggle.classList.add("visible");
